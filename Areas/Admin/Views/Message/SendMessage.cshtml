@@ -1,0 +1,42 @@
+﻿@model Project__B_Night.Entities.Message
+@{
+    ViewBag.Title = "SendMessage";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+
+<h2 class="alert alert-success">Yeni Mesaj Göncderme sayfası</h2>
+
+<div class="container">
+    <div class="page-inner">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Mesaj İşlemleri</div>
+                    </div>
+                    <div class="card-body">
+
+                        <form method="post">
+
+                            <label>Alıcı Email</label>
+                            <br />
+                            @Html.TextBoxFor(x => x.ReceiverMail, new { @class = "Form-control" })
+                            <br />
+                            <label>Baslık</label>
+                            <br />
+                            @Html.TextBoxFor(x => x.Subject, new { @class = "Form-control" })
+                            <br />
+                            <label>Mesajınız</label>
+                            <br />
+                            @Html.TextAreaFor(x => x.Content, new { @class = "Form-control" })
+                            <br />
+                            <br />
+                            <button class="btn btn-success">Mesajı Gönder</button>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,56 @@
+﻿@model List<Project__B_Night.Entities.Destination>
+@{
+    ViewBag.Title = "DestinationList";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+    var count = 0;
+}
+
+<h2 class="alert alert-success">Destinasyon İşlemleri</h2>
+
+<div class="container">
+    <div class="page-inner">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Destinasyon İşlemleri</div>
+                    </div>
+                    <div class="card-body">
+
+                        <table class="table mt-3">
+                            <thead>
+                                <tr>
+                                    <th scope="col">No</th>
+                                    <th scope="col">Ülke</th>
+                                    <th scope="col">Şehir</th>
+                                    <th scope="col">Gün/Gece</th>
+                                    <th scope="col">Fiyat</th>
+                                    <th scope="col">Detaylar</th>
+                                    <th scope="col">Sil</th>
+                                    <th scope="col">Güncelle</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    count++;
+                                    <tr>
+                                        <td>@count</td>
+                                        <td>@item.Country</td>
+                                        <td>@item.City</td>
+                                        <td>@item.DayNight gün /@(item.DayNight-1) gece</td>
+                                        <td>@item.Price</td>
+                                        <td><a href="" class="btn btn-info">Detaylar</a></td>
+                                        <td><a href="/Admin/Destination/DeleteDestination/@item.DestinationId" class="btn btn-danger">Sil</a></td>
+                                        <td><a href="/Admin/Destination/UpdateDestination/@item.DestinationId" class="btn btn-warning">Güncelle</a></td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                        <a href="/Admin/Destination/CreateDestination/" class="btn btn-primary">Yeni Destinasyon Ekle</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

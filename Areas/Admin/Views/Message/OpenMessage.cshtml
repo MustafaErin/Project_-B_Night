@@ -1,0 +1,38 @@
+﻿@model Project__B_Night.Entities.Message
+@{
+    ViewBag.Title = "OpenMessage";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Mesaj içeriği</h2>
+
+<form method="post">
+    <div class="container">
+
+        @Html.HiddenFor(x => x.MessageId)
+        <label>Gönderici</label>
+        <br />
+        @Html.TextBoxFor(x => x.SenderMail, new { @class = "form-control" })
+        <br />
+        <label>Alıcı</label>
+        <br />
+        @Html.TextBoxFor(x => x.ReceiverMail, new { @class = "form-control" })
+        <br />
+        <label>Konu</label>
+        <br />
+        @Html.TextBoxFor(x => x.Subject, new { @class = "form-control" })
+        <br />
+        <label>Gönderilme Tarihi</label>
+        <br />
+        @Html.TextBoxFor(x => x.SendDate, new { @class = "form-control" })
+        <br />
+        <label>İçerik</label>
+        <br />
+        @Html.TextAreaFor(x => x.SenderMail, 1, 5, new { @class = "form-control" })
+
+    </div>
+
+</form>
+<br />
+<br />
+<a href="/Admin/Message/inbox/"  style="margin-left:50px;"> << Gelen Mesajlar</a>

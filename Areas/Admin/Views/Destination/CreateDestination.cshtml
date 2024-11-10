@@ -1,0 +1,57 @@
+﻿@model Project__B_Night.Entities.Destination
+@{
+    ViewBag.Title = "CreateDestination";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+
+<h2 class="alert alert-success">Destinasyon Oluştur</h2>
+
+<div class="container">
+    <div class="page-inner">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Destinasyon İşlemleri</div>
+                    </div>
+                    <div class="card-body">
+
+                        <form method="post">
+
+                            <label>Ülke Adı</label>
+                            <br />
+                            @Html.TextBoxFor(x => x.Country, new { @class = "Form-control" })
+                            <br />
+                            <label>Şehir Adı</label>
+                            <br />
+                            @Html.TextBoxFor(x => x.City, new { @class = "Form-control" })
+                            <br />
+                            <label>Başlık</label>
+                            <br />
+                            @Html.TextBoxFor(x => x.Title, new { @class = "Form-control" })
+                            <br />
+                            <label>Gün/Gece</label>
+                            <br />
+                            @Html.TextBoxFor(x => x.DayNight, new { @class = "Form-control" })
+                            <br />
+                            <label>Kapak Görseli</label>
+                            <br />
+                            @Html.TextBoxFor(x => x.İmageUrl, new { @class = "Form-control" })
+                            <br />
+                            <label>Fiyat</label>
+                            <br />
+                            @Html.TextBoxFor(x => x.Price, new { @class = "Form-control" })
+                            <br />
+                            <label>Açıklama</label>
+                            <br />
+                            @Html.TextAreaFor(x => x.Description,5,0, new { @class = "Form-control" })
+                            <br />
+                            <button class="btn btn-success">Destinasyon Ekle</button>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

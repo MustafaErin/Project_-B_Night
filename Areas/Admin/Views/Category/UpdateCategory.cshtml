@@ -1,0 +1,28 @@
+﻿@model Project__B_Night.Entities.Category
+@{
+    ViewBag.Title = "UpdateCategory";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>UpdateCategory</h2>
+
+
+<h2 class="alert alert-success">Category Güncelle</h2>
+<br />
+
+<form method="post" class="form-group">
+
+    @Html.HiddenFor(x => x.CategoryId)
+    <br />
+    <label>Kategory Adı</label>
+    <br />
+    @Html.TextBoxFor(x => x.CategoryName, new { @class = "form-control" })
+    <br />
+    <label>Kategory Statusü</label>
+    <br />
+    @Html.TextBoxFor(x => x.CategoryStatus, new { @class = "form-control" })
+    <br />
+    <br />
+    <button class="btn btn-success">Güncelle</button>
+</form>
+

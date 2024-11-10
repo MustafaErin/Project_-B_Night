@@ -1,0 +1,35 @@
+﻿@model Project__B_Night.Entities.Category
+@{
+    ViewBag.Title = "CreateCategory";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+
+<h2 class="alert alert-success">CreateCategory</h2>
+
+<div class="container">
+    <div class="page-inner">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Destinasyon İşlemleri</div>
+                    </div>
+                         <div class="card-body">
+
+                        <form method="post">
+                            <label>Kategori Adı</label>
+                            <br />
+                            @Html.TextBoxFor(x => x.CategoryName, new { @class = "Form-control" })
+                            <br />
+                            <label>Status</label>
+                            <br />
+                            @Html.TextBoxFor(x => x.CategoryStatus, new { @class = "Form-control" })
+                            <br /><br />
+                            <button class="btn btn-success">Ekle</button>
+                        </form>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

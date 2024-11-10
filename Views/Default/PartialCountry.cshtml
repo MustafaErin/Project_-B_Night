@@ -1,0 +1,97 @@
+﻿
+@model PagedList.IPagedList<Project__B_Night.Entities.Destination>
+@using PagedList
+@using PagedList.Mvc
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    </style>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+
+
+    <div class="visit-country">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-12">
+                    <div class="container">
+                        <div class="section-heading">
+                            <h2 style="margin-left:450px;">Popüler Tur ve Seyahat Rotalarımız </h2>
+                            <p style="margin-left:350px;">Dünyanın dört bir noktasına alanında uzman Rehberler Eşliğinde seyehate Çıkmaya Hazırmısınız...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="items">
+                        <div class="row">
+                            @foreach (var item in Model)
+                            {
+                                <div class="col-lg-12">
+                                    <div class="item">
+                                        <div class="row">
+                                            <div class="col-lg-4 col-sm-5">
+                                                <div class="image">
+                                                    <img src="@item.İmageUrl" style="width:stretch" />
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-8 col-sm-7">
+                                                <div class="right-content">
+                                                    <h4>@item.Country</h4>
+                                                    <span>@item.City</span>
+
+                                                    <div class="main-button">
+
+                                                        @Html.Action("PartialPopap", "Default")
+
+                                                    </div>
+
+                                                    <p class="description">
+                                                        @item.Description.Substring(0, 350)...<a href="/Default/DestinationDetail/@item.DestinationId" class="btn btn-outline">Devamını Oku >></a>
+                                                    </p>
+
+                                                    <ul class="info">
+                                                        <li><i class="fa fa-user"></i>@item.DayNight gün/ @(item.DayNight-1) Gece</li>
+                                                        <li><i class="fa fa-globe"></i>Fiyat: @item.Price ₺</li>
+                                                        <li><i class="fa fa-home"></i>Kapasite: @item.Capacity kişi</li>
+                                                    </ul>
+                                                    <div class="text-button">
+                                                        <a href="/Default/DestinationDetail/@item.DestinationId">Tur Detaylarını Gör <i class="fa fa-arrow-right"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+
+
+                            }
+                           
+
+                            @Html.PagedListPager((IPagedList)Model, p => Url.Action("PartialCountry", new { p }), new PagedListRenderOptions
+                            {
+                              LiElementClasses = new List<string>
+                              { "page-link"}
+                            })
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

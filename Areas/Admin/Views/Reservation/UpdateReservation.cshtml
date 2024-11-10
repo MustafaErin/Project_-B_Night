@@ -1,0 +1,53 @@
+﻿@model Project__B_Night.Entities.Reservation
+@{
+    ViewBag.Title = "UpdateReservation";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+
+<h2 class="alert alert-success">Rezervasyon Güncelleme</h2>
+
+<div class="container">
+    <div class="page-inner">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Rezervasyon İşlemleri</div>
+                    </div>
+                    <div class="card-body">
+
+                        <form method="post">
+                            @Html.HiddenFor(x => x.ReservationId)
+                            <label>isim</label>
+                            <br />
+                            @Html.TextBoxFor(x => x.Name, new { @class = "Form-control" })
+                            <br />
+                            <label>Tur İsmi</label>
+                            <br />
+                            @Html.TextBoxFor(x => x.Description, new { @class = "Form-control" })
+                            <br />
+                            <label>Rezervasyon Tarihi</label>
+                            <br />
+                            @Html.TextBoxFor(x => x.ReservationDate, new { @class = "Form-control" })
+                            <br />
+                            <label>Kişi Sayısı</label>
+                            <br />
+                            @Html.TextBoxFor(x => x.PersonCount, new { @class = "Form-control" })
+                            <br />
+                            <label>Telefon</label>
+                            <br />
+                            @Html.TextBoxFor(x => x.Phone, new { @class = "Form-control" })
+                            <br />
+                            <label>Ödeme Durumu</label>
+                            <br />
+                            @Html.TextBoxFor(x => x.Payment, new { @class = "Form-control" })
+                            <br />
+                            <button class="btn btn-success">Rezervasyonu Güncelle</button>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
